@@ -1,0 +1,185 @@
+:root {
+  /* Light Theme */
+  --shield-white: #ffffff;
+  --shield-light: #f8f9fa;
+  --shield-gray: #e9ecef;
+  --shield-dark: #212529;
+  --shield-blue: #1a73e8;
+  --shield-red: #d32f2f;
+  
+  /* Dark Theme */
+  --shield-d-bg: #121212;
+  --shield-d-surface: #1e1e1e;
+  --shield-d-text: #e1e1e1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --shield-white: var(--shield-d-surface);
+    --shield-light: var(--shield-d-bg);
+    --shield-gray: #333;
+    --shield-dark: var(--shield-d-text);
+    --shield-blue: #8ab4f8;
+    --shield-red: #f28b82;
+  }
+}
+
+/* Base Styles */
+body {
+  width: 360px;
+  margin: 0;
+  font-family: 'Roboto', system-ui, sans-serif;
+  background: var(--shield-light);
+  color: var(--shield-dark);
+}
+
+.shield-app {
+  padding: 16px;
+}
+
+/* Header */
+.shield-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.shield-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shield-logo {
+  width: 24px;
+  height: 24px;
+  fill: var(--shield-blue);
+}
+
+.shield-header h1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Cards */
+.shield-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.shield-card {
+  background: var(--shield-white);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.shield-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.shield-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.shield-btn.action {
+  background: var(--shield-white);
+  color: var(--shield-dark);
+  margin-bottom: 8px;
+}
+
+.shield-btn.action:hover {
+  background: color-mix(in srgb, var(--shield-blue) 10%, transparent);
+}
+
+.shield-btn.icon {
+  background: transparent;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+/* Toggle Switch */
+.shield-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.shield-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--shield-gray);
+  transition: .2s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .2s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--shield-blue);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Statusbar */
+.shield-statusbar {
+  font-size: 12px;
+  color: var(--shield-blue);
+  text-align: center;
+  padding: 8px;
+  margin-top: 8px;
+}

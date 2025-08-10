@@ -1,0 +1,7 @@
+{
+  "rules": [
+    "||ads.example.com^",
+    "||track.example.com^",
+    "||analytics.example.com^"
+  ]
+}

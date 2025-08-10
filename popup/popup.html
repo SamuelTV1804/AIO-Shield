@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIO Shield</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="shield-app">
+    <!-- Header mit Logo -->
+    <header class="shield-header">
+      <div class="shield-brand">
+        <svg class="shield-logo" viewBox="0 0 24 24">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+        </svg>
+        <h1>AIO Shield</h1>
+      </div>
+      <button class="shield-btn icon" id="settings-btn" aria-label="Settings">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c..."/></svg>
+      </button>
+    </header>
+
+    <!-- Hauptfunktionen -->
+    <section class="shield-section">
+      <h2 class="section-title">Protection Suite</h2>
+      <div class="shield-grid">
+        <!-- Zeile 1 -->
+        <div class="shield-card" data-feature="adblock">
+          <div class="card-icon">🛡️</div>
+          <span class="card-title">Ad Blocker</span>
+          <label class="shield-switch">
+            <input type="checkbox" id="adblock-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="shield-card" data-feature="clearurls">
+          <div class="card-icon">✂️</div>
+          <span class="card-title">URL Cleaner</span>
+          <label class="shield-switch">
+            <input type="checkbox" id="clearurls-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- Zeile 2 -->
+        <div class="shield-card" data-feature="https">
+          <div class="card-icon">🔒</div>
+          <span class="card-title">HTTPS Enforcer</span>
+          <label class="shield-switch">
+            <input type="checkbox" id="https-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="shield-card" data-feature="cookies">
+          <div class="card-icon">🍪</div>
+          <span class="card-title">Cookie Guard</span>
+          <label class="shield-switch">
+            <input type="checkbox" id="cookie-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- OneTab Funktion -->
+    <section class="shield-section">
+      <h2 class="section-title">Performance Tools</h2>
+      <button class="shield-btn action" id="onetab-btn">
+        <span class="btn-icon">💾</span>
+        <span>Tab Condenser</span>
+      </button>
+    </section>
+
+    <!-- Security Tools -->
+    <section class="shield-section">
+      <h2 class="section-title">Security Scan</h2>
+      <button class="shield-btn action" id="scan-btn">
+        <span class="btn-icon">🔍</span>
+        <span>Run Full Scan</span>
+      </button>
+    </section>
+
+    <!-- Statusbar -->
+    <div class="shield-statusbar" id="status-bar"></div>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
